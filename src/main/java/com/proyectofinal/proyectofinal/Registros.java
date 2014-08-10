@@ -62,6 +62,18 @@ public class Registros implements Serializable {
     public Registros() {
     }
 
+    public Registros(Integer idRegistro, Integer idUsuario, String direccion, String usuario, String clave, String observaciones, Socio idSocio, Tiposocio idTipoSocio, TipoRegistro idtipoReg) {
+        this.idRegistro = idRegistro;
+        this.idUsuario = idUsuario;
+        this.direccion = direccion;
+        this.usuario = usuario;
+        this.clave = clave;
+        this.observaciones = observaciones;
+        this.idSocio = idSocio;
+        this.idTipoSocio = idTipoSocio;
+        this.idtipoReg = idtipoReg;
+    }
+
     public Registros(Integer idRegistro) {
         this.idRegistro = idRegistro;
     }
@@ -160,7 +172,7 @@ public class Registros implements Serializable {
 
     @Override
     public String toString() {
-        return "com.proyectofinal.proyectofinal.Registros[ idRegistro=" + idRegistro + " ]";
+        return "com.Registros[ idRegistro=" + idRegistro + " ]";
     }
     
 }

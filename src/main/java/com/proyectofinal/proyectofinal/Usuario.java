@@ -113,7 +113,7 @@ public class Usuario implements Serializable {
 
     @Override
     public String toString() {
-        return "com.proyectofinal.proyectofinal.Usuario[ idUsuario=" + idUsuario + " ]";
+        return "com.Usuario[ idUsuario=" + idUsuario + " ]";
     }
     
 }

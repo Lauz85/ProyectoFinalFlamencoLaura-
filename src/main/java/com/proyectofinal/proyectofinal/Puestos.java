@@ -7,7 +7,7 @@
 package com.proyectofinal.proyectofinal;
 
 import java.io.Serializable;
-import java.util.Collection;
+import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -38,21 +38,16 @@ public class Puestos implements Serializable {
     @Size(max = 100)
     @Column(name = "puesto")
     private String puesto;
-
-    public Puestos(Integer idPuesto, String puesto) {
-        this.idPuesto = idPuesto;
-        this.puesto = puesto;
-    }
-
-    public Puestos(Integer idPuesto, String puesto, Collection<Usuario> usuarioCollection) {
-        this.idPuesto = idPuesto;
-        this.puesto = puesto;
-        this.usuarioCollection = usuarioCollection;
-    }
     @OneToMany(mappedBy = "idPuesto")
-    private Collection<Usuario> usuarioCollection;
+    private List<Usuario> usuarioList;
 
     public Puestos() {
+    }
+
+    public Puestos(Integer idPuesto, String puesto, List<Usuario> usuarioList) {
+        this.idPuesto = idPuesto;
+        this.puesto = puesto;
+        this.usuarioList = usuarioList;
     }
 
     public Puestos(Integer idPuesto) {
@@ -75,12 +70,12 @@ public class Puestos implements Serializable {
         this.puesto = puesto;
     }
 
-    public Collection<Usuario> getUsuarioCollection() {
-        return usuarioCollection;
+    public List<Usuario> getUsuarioList() {
+        return usuarioList;
     }
 
-    public void setUsuarioCollection(Collection<Usuario> usuarioCollection) {
-        this.usuarioCollection = usuarioCollection;
+    public void setUsuarioList(List<Usuario> usuarioList) {
+        this.usuarioList = usuarioList;
     }
 
     @Override
@@ -105,7 +100,7 @@ public class Puestos implements Serializable {
 
     @Override
     public String toString() {
-        return "com.proyectofinal.proyectofinal.Puestos[ idPuesto=" + idPuesto + " ]";
+        return "com.Puestos[ idPuesto=" + idPuesto + " ]";
     }
     
 }

@@ -9,6 +9,7 @@
     <class>com.proyectofinal.proyectofinal.TipoRegistro</class>
     <class>com.proyectofinal.proyectofinal.Tiposocio</class>
     <class>com.proyectofinal.proyectofinal.Puestos</class>
+    <class>com.Registros</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/ProyectoF?zeroDateTimeBehavior=convertToNull"/>
