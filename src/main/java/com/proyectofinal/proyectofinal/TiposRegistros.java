@@ -37,6 +37,11 @@ public class TiposRegistros implements Serializable {
     @Column(name = "descripcion")
     private String descripcion;
 
+    public TiposRegistros(Integer idTipoReg, String descripcion) {
+        this.idTipoReg = idTipoReg;
+        this.descripcion = descripcion;
+    }
+
     public TiposRegistros() {
     }
 
@@ -50,11 +55,6 @@ public class TiposRegistros implements Serializable {
 
     public void setIdTipoReg(Integer idTipoReg) {
         this.idTipoReg = idTipoReg;
-    }
-
-    public TiposRegistros(Integer idTipoReg, String descripcion) {
-        this.idTipoReg = idTipoReg;
-        this.descripcion = descripcion;
     }
 
     public String getDescripcion() {
@@ -87,7 +87,7 @@ public class TiposRegistros implements Serializable {
 
     @Override
     public String toString() {
-        return "com.TiposRegistros[ idTipoReg=" + idTipoReg + " ]";
+        return "com.proyectofinal.proyectofinal.TiposRegistros[ idTipoReg=" + idTipoReg + " ]";
     }
     
 }

@@ -7,7 +7,7 @@
 package com.proyectofinal.proyectofinal;
 
 import java.io.Serializable;
-import java.util.List;
+import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -39,13 +39,19 @@ public class Tiposocio implements Serializable {
     @Column(name = "descripcion")
     private String descripcion;
     @OneToMany(mappedBy = "idTipoSocio")
-    private List<Registros> registrosList;
+    private Collection<Registros> registrosCollection;
 
     public Tiposocio() {
     }
 
     public Tiposocio(Integer idTipoSocio) {
         this.idTipoSocio = idTipoSocio;
+    }
+
+    public Tiposocio(Integer idTipoSocio, String descripcion, Collection<Registros> registrosCollection) {
+        this.idTipoSocio = idTipoSocio;
+        this.descripcion = descripcion;
+        this.registrosCollection = registrosCollection;
     }
 
     public Integer getIdTipoSocio() {
@@ -56,12 +62,6 @@ public class Tiposocio implements Serializable {
         this.idTipoSocio = idTipoSocio;
     }
 
-    public Tiposocio(Integer idTipoSocio, String descripcion, List<Registros> registrosList) {
-        this.idTipoSocio = idTipoSocio;
-        this.descripcion = descripcion;
-        this.registrosList = registrosList;
-    }
-
     public String getDescripcion() {
         return descripcion;
     }
@@ -70,12 +70,12 @@ public class Tiposocio implements Serializable {
         this.descripcion = descripcion;
     }
 
-    public List<Registros> getRegistrosList() {
-        return registrosList;
+    public Collection<Registros> getRegistrosCollection() {
+        return registrosCollection;
     }
 
-    public void setRegistrosList(List<Registros> registrosList) {
-        this.registrosList = registrosList;
+    public void setRegistrosCollection(Collection<Registros> registrosCollection) {
+        this.registrosCollection = registrosCollection;
     }
 
     @Override
@@ -100,7 +100,7 @@ public class Tiposocio implements Serializable {
 
     @Override
     public String toString() {
-        return "com.Tiposocio[ idTipoSocio=" + idTipoSocio + " ]";
+        return "com.proyectofinal.proyectofinal.Tiposocio[ idTipoSocio=" + idTipoSocio + " ]";
     }
     
 }

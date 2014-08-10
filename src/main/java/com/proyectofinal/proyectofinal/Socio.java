@@ -7,7 +7,7 @@
 package com.proyectofinal.proyectofinal;
 
 import java.io.Serializable;
-import java.util.List;
+import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -35,22 +35,20 @@ public class Socio implements Serializable {
     @Basic(optional = false)
     @Column(name = "id_socio")
     private Integer idSocio;
+
+    public Socio(Integer idSocio, String nombre, Collection<Registros> registrosCollection) {
+        this.idSocio = idSocio;
+        this.nombre = nombre;
+        this.registrosCollection = registrosCollection;
+    }
     @Size(max = 100)
     @Column(name = "nombre")
     private String nombre;
     @OneToMany(mappedBy = "idSocio")
-    private List<Registros> registrosList;
+    private Collection<Registros> registrosCollection;
 
     public Socio() {
     }
-
-    public Socio(Integer idSocio, String nombre, List<Registros> registrosList) {
-        this.idSocio = idSocio;
-        this.nombre = nombre;
-        this.registrosList = registrosList;
-    }
-
-  
 
     public Socio(Integer idSocio) {
         this.idSocio = idSocio;
@@ -72,12 +70,12 @@ public class Socio implements Serializable {
         this.nombre = nombre;
     }
 
-    public List<Registros> getRegistrosList() {
-        return registrosList;
+    public Collection<Registros> getRegistrosCollection() {
+        return registrosCollection;
     }
 
-    public void setRegistrosList(List<Registros> registrosList) {
-        this.registrosList = registrosList;
+    public void setRegistrosCollection(Collection<Registros> registrosCollection) {
+        this.registrosCollection = registrosCollection;
     }
 
     @Override
@@ -102,7 +100,7 @@ public class Socio implements Serializable {
 
     @Override
     public String toString() {
-        return "com.Socio[ idSocio=" + idSocio + " ]";
+        return "com.proyectofinal.proyectofinal.Socio[ idSocio=" + idSocio + " ]";
     }
     
 }

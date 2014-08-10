@@ -7,7 +7,7 @@
 package com.proyectofinal.proyectofinal;
 
 import java.io.Serializable;
-import java.util.List;
+import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -29,17 +29,28 @@ import javax.validation.constraints.Size;
 @NamedQueries({
     @NamedQuery(name = "TipoRegistro.findAll", query = "SELECT t FROM TipoRegistro t")})
 public class TipoRegistro implements Serializable {
+
+    public TipoRegistro(Integer idtipoReg, String descripcion, Collection<Registros> registrosCollection) {
+        this.idtipoReg = idtipoReg;
+        this.descripcion = descripcion;
+        this.registrosCollection = registrosCollection;
+    }
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "id_tipo_Reg")
     private Integer idtipoReg;
+
+    public TipoRegistro(Integer idtipoReg, String descripcion) {
+        this.idtipoReg = idtipoReg;
+        this.descripcion = descripcion;
+    }
     @Size(max = 100)
     @Column(name = "descripcion")
     private String descripcion;
     @OneToMany(mappedBy = "idtipoReg")
-    private List<Registros> registrosList;
+    private Collection<Registros> registrosCollection;
 
     public TipoRegistro() {
     }
@@ -64,12 +75,12 @@ public class TipoRegistro implements Serializable {
         this.descripcion = descripcion;
     }
 
-    public List<Registros> getRegistrosList() {
-        return registrosList;
+    public Collection<Registros> getRegistrosCollection() {
+        return registrosCollection;
     }
 
-    public void setRegistrosList(List<Registros> registrosList) {
-        this.registrosList = registrosList;
+    public void setRegistrosCollection(Collection<Registros> registrosCollection) {
+        this.registrosCollection = registrosCollection;
     }
 
     @Override
@@ -94,7 +105,7 @@ public class TipoRegistro implements Serializable {
 
     @Override
     public String toString() {
-        return "com.TipoRegistro[ idtipoReg=" + idtipoReg + " ]";
+        return "com.proyectofinal.proyectofinal.TipoRegistro[ idtipoReg=" + idtipoReg + " ]";
     }
     
 }
