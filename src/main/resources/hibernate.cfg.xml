@@ -7,6 +7,15 @@
     <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/ProyectoF?zeroDateTimeBehavior=convertToNull</property>
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.connection.password">lauz</property>
-    <mapping class="com.proyectofinal.proyectofinal"/>
+    
+    
+    <mapping class="com.proyectofinal.proyectofinal.TipoRegistro"/>
+    <mapping class="com.proyectofinal.proyectofinal.Tiposocio"/>
+    <mapping class="com.proyectofinal.proyectofinal.TiposRegistros"/>
+    <mapping class="com.proyectofinal.proyectofinal.Puestos"/>
+    <mapping class="com.proyectofinal.proyectofinal.Registros"/>
+    <mapping class="com.proyectofinal.proyectofinal.Socio"/>
+        <mapping class="com.proyectofinal.proyectofinal.Usuario"/>
+    
   </session-factory>
 </hibernate-configuration>

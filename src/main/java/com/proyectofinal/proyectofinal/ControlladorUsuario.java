@@ -59,6 +59,6 @@ public class ControlladorUsuario {
   return mapper.writeValueAsString(g.buscarTodosusuarios());
     }
      
-    
+   
     
 }
