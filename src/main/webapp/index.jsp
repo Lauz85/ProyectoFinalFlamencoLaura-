@@ -6,12 +6,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Proyecto Final</title>
-          <link rel="stylesheet" href="css/themes/default/jquery.mobile-1.3.1.css"/>
-        <script src="js/jquery.js"></script>
-        <script src="js/jquery.mobile-1.3.1.js"></script>
-        <script src="js/actualizar.js"></script>
-        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-        <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+ 
+     
            
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
@@ -52,7 +48,7 @@ $("#guardar").click(function(){
     var id_puesto=$("#id_puesto").val();
     $.ajax({
         method:'GET',
-        url:"http://localhost:8095/ProyectoFinal/servicios/usuario/"+campo.nombre + " "+campo.correo+""+campo.id_puesto,
+        url:"http://localhost:8095/ProyectoFinal/servicios/usuario/"+campo.nombre + ""+campo.correo+""+campo.id_puesto,
         success:function(valor){
             alert(valor)
         },

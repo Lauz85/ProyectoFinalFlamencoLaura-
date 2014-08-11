@@ -16,7 +16,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 @EnableWebMvc
 @Configuration
-@ComponentScan("com.segundoparcial.ete2")
+@ComponentScan("com.proyectofinal.proyectofinal")
 public class WebAppConfig extends WebMvcConfigurerAdapter{
     //Aqui van mas configuraciones como los interceptores de sesion 
 
