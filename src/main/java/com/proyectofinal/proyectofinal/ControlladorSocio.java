@@ -43,7 +43,7 @@ public class ControlladorSocio{
     //IMPLEMENTACION 
         DAOSocioImpl u=new DAOSocioImpl() ;
         u.agregarSocio(new Socio(1,nombre,Registros));
-        return "El tipo se agrego con exito";
+        return "El Socio se agrego con exito";
   
     }
     
