@@ -40,6 +40,8 @@ public class Socio implements Serializable {
         this.idSocio = idSocio;
         this.nombre = nombre;
         this.registrosCollection = registrosCollection;
+
+  
     }
     @Size(max = 100)
     @Column(name = "nombre")
