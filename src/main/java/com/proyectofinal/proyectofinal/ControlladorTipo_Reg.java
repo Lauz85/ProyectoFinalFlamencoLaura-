@@ -22,9 +22,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 @Controller
 @RequestMapping("/")
-public class ControlladorUsuario {
+public class ControlladorTipo_Reg{
    
-    @RequestMapping(value="/usuario/{nombre}/{correo}/{id_puesto}", 
+    @RequestMapping(value="/TipoRegistro/{descripcion}", 
     //Para el insert siempre debe ser con POST         
     method=RequestMethod.GET, 
     
@@ -36,27 +36,26 @@ public class ControlladorUsuario {
     public @ResponseBody
             
     //        
-    String metodo2(@PathVariable String nombre,
-                   @PathVariable String correo,
-                   @PathVariable int id_puesto){
+    String metodo2( @PathVariable String descripcion){
         
     //IMPLEMENTACION 
-        DAOUsuarioImpl u=new DAOUsuarioImpl();
-        u.agregarUsuario ( new Usuario (1,nombre,correo,id_puesto));
-        return "El usuario se agrego con exito";
+        DAOTipo_RegistroImpl u=new DAOTipo_RegistroImpl() ;
+        u.agregarTipoRegistro( new TipoRegistro(1,descripcion));
+        return "El tipo se agrego con exito";
   
     }
     
    //PRESENTACION DE TODOS 
-    @RequestMapping(value="/usuario", method=RequestMethod.GET, 
+    @RequestMapping(value="/Tipo_Reg", method=RequestMethod.GET, 
             headers={"Accept=application/json"})
     public @ResponseBody String metodo1()throws Exception{
      
-  DAOUsuarioImpl g=new DAOUsuarioImpl();
-  Map<String,ArrayList<Usuario>> singletonMap =Collections.singletonMap("usuario", g.buscarTodosusuarios());
+  DAOTipo_RegistroImpl g=new DAOTipo_RegistroImpl();
+  
+  Map<String,ArrayList<TipoRegistro>> singletonMap =Collections.singletonMap("TipoRegistro", g.buscarTodoTiposRegistros());
   ObjectMapper mapper=new ObjectMapper();
   
-  return mapper.writeValueAsString(g.buscarTodosusuarios());
+  return mapper.writeValueAsString(g.buscarTodoTiposRegistros());
     }
      
    
