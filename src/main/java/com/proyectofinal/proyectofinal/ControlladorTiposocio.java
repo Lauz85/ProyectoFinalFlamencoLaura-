@@ -23,10 +23,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 @Controller
 @RequestMapping("/")
-public class ControlladorPuestos{
- 
+public class ControlladorTiposocio{
+     private Collection<Registros> Registros;
+    
    
-    @RequestMapping(value="/puestos/{puesto}", 
+    @RequestMapping(value="/Tiposocio/{nombre}", 
     //Para el insert siempre debe ser con POST         
     method=RequestMethod.GET, 
     
@@ -38,26 +39,27 @@ public class ControlladorPuestos{
     public @ResponseBody
             
     //        
-    String metodo2( @PathVariable String puesto){
+    String metodo2( @PathVariable String nombre){
         
     //IMPLEMENTACION 
-        DAOPuestosImpl u=new DAOPuestosImpl() ;
-        u.agregarPuesto(new Puestos(1,puesto));
-        return "El Puesto se agrego con exito";
+        DAOTipoSocioImpl u=new DAOTipoSocioImpl() ;
+        u.agregarTipoSocio(new Tiposocio(1,nombre,Registros));
+       
+        return "El Tipo de socio se agrego con exito";
   
     }
     
    //PRESENTACION DE TODOS 
-    @RequestMapping(value="/Puestos", method=RequestMethod.GET, 
+    @RequestMapping(value="/TipoSocio", method=RequestMethod.GET, 
             headers={"Accept=application/json"})
     public @ResponseBody String metodo1()throws Exception{
      
-   DAOPuestosImpl g=new DAOPuestosImpl();
+   DAOTipoSocioImpl g=new DAOTipoSocioImpl ();
   
-  Map<String,ArrayList<Puestos>> singletonMap =Collections.singletonMap("Puestos", g.buscarTodospuestos());
+  Map<String,ArrayList<Tiposocio>> singletonMap =Collections.singletonMap("Tiposocio", g.buscarTodosTiposSocios());
   ObjectMapper mapper=new ObjectMapper();
   
-  return mapper.writeValueAsString(g.buscarTodospuestos());
+  return mapper.writeValueAsString(g.buscarTodosTiposSocios());
     }
      
    
