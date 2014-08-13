@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @RequestMapping("/")
 public class ControlladorSocio{
-    private Collection<Registros> Registros;
+    
    
     @RequestMapping(value="/Socio/{nombre}", 
     //Para el insert siempre debe ser con POST         
@@ -42,7 +42,7 @@ public class ControlladorSocio{
         
     //IMPLEMENTACION 
         DAOSocioImpl u=new DAOSocioImpl() ;
-        u.agregarSocio(new Socio(1,nombre,Registros));
+        u.agregarSocio(new Socio(1,nombre));
         return "El Socio se agrego con exito";
   
     }

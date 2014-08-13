@@ -24,10 +24,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @RequestMapping("/")
 public class ControlladorTiposocio{
-     private Collection<Registros> Registros;
+    
     
    
-    @RequestMapping(value="/Tiposocio/{nombre}", 
+    @RequestMapping(value="/TipoSocio/{nombre}", 
     //Para el insert siempre debe ser con POST         
     method=RequestMethod.GET, 
     
@@ -43,7 +43,7 @@ public class ControlladorTiposocio{
         
     //IMPLEMENTACION 
         DAOTipoSocioImpl u=new DAOTipoSocioImpl() ;
-        u.agregarTipoSocio(new Tiposocio(1,nombre,Registros));
+        u.agregarTipoSocio(new Tiposocio(1,nombre));
        
         return "El Tipo de socio se agrego con exito";
   

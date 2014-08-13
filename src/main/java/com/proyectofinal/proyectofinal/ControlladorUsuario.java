@@ -8,6 +8,7 @@ package com.proyectofinal.proyectofinal;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.Map;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.stereotype.Controller;
@@ -42,7 +43,7 @@ public class ControlladorUsuario {
         
     //IMPLEMENTACION 
         DAOUsuarioImpl u=new DAOUsuarioImpl();
-        u.agregarUsuario ( new Usuario (1,nombre,correo,id_puesto));
+        u.agregarUsuario ( new Usuario (1,nombre,correo, new Puestos(id_puesto)));
         return "El usuario se agrego con exito";
   
     }
@@ -53,7 +54,7 @@ public class ControlladorUsuario {
     public @ResponseBody String metodo1()throws Exception{
      
   DAOUsuarioImpl g=new DAOUsuarioImpl();
-  Map<String,ArrayList<Usuario>> singletonMap =Collections.singletonMap("usuario", g.buscarTodosusuarios());
+  Map<String,List<Usuario>> singletonMap =Collections.singletonMap("usuario", g.buscarTodosusuarios());
   ObjectMapper mapper=new ObjectMapper();
   
   return mapper.writeValueAsString(g.buscarTodosusuarios());

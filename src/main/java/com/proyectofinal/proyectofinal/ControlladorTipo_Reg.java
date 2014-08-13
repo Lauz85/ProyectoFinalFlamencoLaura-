@@ -46,7 +46,7 @@ public class ControlladorTipo_Reg{
     }
     
    //PRESENTACION DE TODOS 
-    @RequestMapping(value="/Tipo_Reg", method=RequestMethod.GET, 
+    @RequestMapping(value="/TipoRegistro", method=RequestMethod.GET, 
             headers={"Accept=application/json"})
     public @ResponseBody String metodo1()throws Exception{
      

@@ -36,18 +36,17 @@ public class Socio implements Serializable {
     @Column(name = "id_socio")
     private Integer idSocio;
 
-    public Socio(Integer idSocio, String nombre, Collection<Registros> registrosCollection) {
+    public Socio(Integer idSocio, String nombre) {
         this.idSocio = idSocio;
         this.nombre = nombre;
-        this.registrosCollection = registrosCollection;
-
+        
   
     }
     @Size(max = 100)
     @Column(name = "nombre")
     private String nombre;
-    @OneToMany(mappedBy = "idSocio")
-    private Collection<Registros> registrosCollection;
+
+
 
     public Socio() {
     }
@@ -72,13 +71,7 @@ public class Socio implements Serializable {
         this.nombre = nombre;
     }
 
-    public Collection<Registros> getRegistrosCollection() {
-        return registrosCollection;
-    }
-
-    public void setRegistrosCollection(Collection<Registros> registrosCollection) {
-        this.registrosCollection = registrosCollection;
-    }
+  
 
     @Override
     public int hashCode() {

@@ -44,13 +44,8 @@ public class Puestos implements Serializable {
         this.puesto = puesto;
     }
 
-    public Puestos(Integer idPuesto, String puesto, Collection<Usuario> usuarioCollection) {
-        this.idPuesto = idPuesto;
-        this.puesto = puesto;
-        this.usuarioCollection = usuarioCollection;
-    }
-    @OneToMany(mappedBy = "idPuesto")
-    private Collection<Usuario> usuarioCollection;
+   
+ 
 
     public Puestos() {
     }
@@ -75,13 +70,7 @@ public class Puestos implements Serializable {
         this.puesto = puesto;
     }
 
-    public Collection<Usuario> getUsuarioCollection() {
-        return usuarioCollection;
-    }
-
-    public void setUsuarioCollection(Collection<Usuario> usuarioCollection) {
-        this.usuarioCollection = usuarioCollection;
-    }
+  
 
     @Override
     public int hashCode() {

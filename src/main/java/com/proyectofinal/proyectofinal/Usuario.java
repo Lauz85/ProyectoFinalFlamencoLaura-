@@ -26,8 +26,7 @@ import javax.validation.constraints.Size;
  */
 @Entity
 @Table(name = "usuario")
-@NamedQueries({
-    @NamedQuery(name = "Usuario.findAll", query = "SELECT u FROM Usuario u")})
+
 public class Usuario implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
@@ -59,9 +58,7 @@ public class Usuario implements Serializable {
         this.idPuesto = idPuesto;
        }
 
-    Usuario(int i, String nombre, String correo, int id_puesto) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   
 
     public Integer getIdUsuario() {
         return idUsuario;

@@ -7,7 +7,7 @@
 package com.proyectofinal.proyectofinal;
 
 import java.io.Serializable;
-import java.util.Collection;
+
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -38,8 +38,7 @@ public class Tiposocio implements Serializable {
     @Size(max = 100)
     @Column(name = "descripcion")
     private String descripcion;
-    @OneToMany(mappedBy = "idTipoSocio")
-    private Collection<Registros> registrosCollection;
+   
 
     public Tiposocio() {
     }
@@ -48,10 +47,10 @@ public class Tiposocio implements Serializable {
         this.idTipoSocio = idTipoSocio;
     }
 
-    public Tiposocio(Integer idTipoSocio, String descripcion, Collection<Registros> registrosCollection) {
+    public Tiposocio(Integer idTipoSocio, String descripcion) {
         this.idTipoSocio = idTipoSocio;
         this.descripcion = descripcion;
-        this.registrosCollection = registrosCollection;
+    
     }
 
     public Integer getIdTipoSocio() {
@@ -70,15 +69,7 @@ public class Tiposocio implements Serializable {
         this.descripcion = descripcion;
     }
 
-    public Collection<Registros> getRegistrosCollection() {
-        return registrosCollection;
-    }
-
-    public void setRegistrosCollection(Collection<Registros> registrosCollection) {
-        this.registrosCollection = registrosCollection;
-    }
-
-    @Override
+  @Override
     public int hashCode() {
         int hash = 0;
         hash += (idTipoSocio != null ? idTipoSocio.hashCode() : 0);

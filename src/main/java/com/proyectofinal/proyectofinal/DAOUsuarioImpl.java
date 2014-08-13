@@ -8,6 +8,7 @@ package com.proyectofinal.proyectofinal;
 
 
 import java.util.ArrayList;
+import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.Query;
 
@@ -26,11 +27,11 @@ public class DAOUsuarioImpl extends DAO {
         * Este metodo obtiene todos los registros de la tabla usuario
         * @return Este metodo nos regresa todos los usuario
         */
-    public ArrayList<Usuario> buscarTodosusuarios() {
+    public List<Usuario> buscarTodosusuarios() {
         begin();
       //  Query q = getSession().createQuery("from Usuario");
         Criteria c=getSession().createCriteria(Usuario.class);
-        ArrayList<Usuario> usuarios = (ArrayList<Usuario>)c.list();
+        List<Usuario> usuarios = (List<Usuario>)c.list();
         commit();
         close();
          

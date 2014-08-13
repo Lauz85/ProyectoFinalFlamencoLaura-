@@ -30,10 +30,10 @@ import javax.validation.constraints.Size;
     @NamedQuery(name = "TipoRegistro.findAll", query = "SELECT t FROM TipoRegistro t")})
 public class TipoRegistro implements Serializable {
 
-    public TipoRegistro(Integer idtipoReg, String descripcion, Collection<Registros> registrosCollection) {
+    public TipoRegistro(Integer idtipoReg, String descripcion ) {
         this.idtipoReg = idtipoReg;
         this.descripcion = descripcion;
-        this.registrosCollection = registrosCollection;
+      
     }
     private static final long serialVersionUID = 1L;
     @Id
@@ -42,15 +42,11 @@ public class TipoRegistro implements Serializable {
     @Column(name = "id_tipo_Reg")
     private Integer idtipoReg;
 
-    public TipoRegistro(Integer idtipoReg, String descripcion) {
-        this.idtipoReg = idtipoReg;
-        this.descripcion = descripcion;
-    }
+   
     @Size(max = 100)
     @Column(name = "descripcion")
     private String descripcion;
-    @OneToMany(mappedBy = "idtipoReg")
-    private Collection<Registros> registrosCollection;
+   
 
     public TipoRegistro() {
     }
@@ -75,14 +71,7 @@ public class TipoRegistro implements Serializable {
         this.descripcion = descripcion;
     }
 
-    public Collection<Registros> getRegistrosCollection() {
-        return registrosCollection;
-    }
-
-    public void setRegistrosCollection(Collection<Registros> registrosCollection) {
-        this.registrosCollection = registrosCollection;
-    }
-
+ 
     @Override
     public int hashCode() {
         int hash = 0;
