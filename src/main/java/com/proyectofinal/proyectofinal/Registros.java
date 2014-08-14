@@ -26,8 +26,7 @@ import javax.validation.constraints.Size;
  */
 @Entity
 @Table(name = "registros")
-@NamedQueries({
-    @NamedQuery(name = "Registros.findAll", query = "SELECT r FROM Registros r")})
+
 public class Registros implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
@@ -60,6 +59,18 @@ public class Registros implements Serializable {
     private TipoRegistro idtipoReg;
 
     public Registros() {
+    }
+
+    public Registros(Integer idRegistro, Integer idUsuario, String direccion, String usuario, String clave, String observaciones, Socio idSocio, Tiposocio idTipoSocio, TipoRegistro idtipoReg) {
+        this.idRegistro = idRegistro;
+        this.idUsuario = idUsuario;
+        this.direccion = direccion;
+        this.usuario = usuario;
+        this.clave = clave;
+        this.observaciones = observaciones;
+        this.idSocio = idSocio;
+        this.idTipoSocio = idTipoSocio;
+        this.idtipoReg = idtipoReg;
     }
 
     public Registros(Integer idRegistro) {

@@ -11,11 +11,10 @@
     
     <mapping class="com.proyectofinal.proyectofinal.TipoRegistro"/>
     <mapping class="com.proyectofinal.proyectofinal.Tiposocio"/>
-    <mapping class="com.proyectofinal.proyectofinal.TiposRegistros"/>
     <mapping class="com.proyectofinal.proyectofinal.Puestos"/>
     <mapping class="com.proyectofinal.proyectofinal.Registros"/>
     <mapping class="com.proyectofinal.proyectofinal.Socio"/>
-        <mapping class="com.proyectofinal.proyectofinal.Usuario"/>
+    <mapping class="com.proyectofinal.proyectofinal.Usuario"/>
     
   </session-factory>
 </hibernate-configuration>
