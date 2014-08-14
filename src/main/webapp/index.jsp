@@ -41,10 +41,10 @@
     
         <script>
    $("#buscar-todos").click(function(){         
-  $.getJSON("http://localhost:8095/ProyectoFinal/servicios/usuario",
+  $.getJSON("http://localhost:8098/ProyectoFinal/servicios/usuario",
   function(result){
     $.each(result, function(i, campo){
-      $("div").append("<li>"+campo.nombre + " "+campo.correo+""+campo.id_puesto);
+      $("div").append("<li>"+campo.nombre + " "+campo.correo+" "+campo.id_puesto);
     });
   });
 });
@@ -55,7 +55,7 @@ $("#guardar").click(function(){
     var id_puesto=$("#id_puesto").val();
     $.ajax({
         method:'GET',
-        url:"http://localhost:8095/ProyectoFinal/servicios/usuario/"+campo.nombre + ""+campo.correo+""+campo.id_puesto,
+        url:"http://localhost:8098/ProyectoFinal/servicios/usuario/"+campo.nombre + ""+campo.correo+""+campo.id_puesto,
         success:function(valor){
             alert(valor)
         },
